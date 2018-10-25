@@ -1,6 +1,6 @@
 {
   "name": "@vyg/react-scripts",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "Configuration and scripts for Create React App.",
   "repository": "voyage/create-react-app",
   "license": "MIT",
