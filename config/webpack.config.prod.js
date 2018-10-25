@@ -337,7 +337,6 @@ module.exports = {
           // By default we support CSS Modules with the extension .module.css
           {
             test: cssRegex,
-            exclude: cssModuleRegex,
             loader: getStyleLoaders({
               importLoaders: 1,
               sourceMap: shouldUseSourceMap,
@@ -352,6 +351,7 @@ module.exports = {
           // using the extension .module.css
           {
             test: cssModuleRegex,
+            exclude: cssRegex,
             loader: getStyleLoaders({
               importLoaders: 1,
               sourceMap: shouldUseSourceMap,
@@ -366,7 +366,6 @@ module.exports = {
           // extensions .module.scss or .module.sass
           {
             test: sassRegex,
-            exclude: sassModuleRegex,
             loader: getStyleLoaders(
               {
                 importLoaders: 2,
@@ -384,6 +383,7 @@ module.exports = {
           // using the extension .module.scss or .module.sass
           {
             test: sassModuleRegex,
+            exclude: sassRegex,
             loader: getStyleLoaders(
               {
                 importLoaders: 2,

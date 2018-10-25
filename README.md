@@ -6,7 +6,7 @@ This is "forked" from Facebook's `react-scripts` v2.0.4 to customize our version
 - Add support for babel-plugin-react-css-modules
 - Add support for decorators
 - Add module resolver to resolve `~` to base `src` directory
-
+- Treat `*.global.(css|scss)` as global CSS and all else as modules CSS
 
 # Usage
 `npx create-react-app --scripts-version=@vyg/react-scripts APP_NAME`

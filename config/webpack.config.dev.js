@@ -257,7 +257,6 @@ module.exports = {
           // By default we support CSS Modules with the extension .module.css
           {
             test: cssRegex,
-            exclude: cssModuleRegex,
             use: getStyleLoaders({
               importLoaders: 1,
             }),
@@ -266,6 +265,7 @@ module.exports = {
           // using the extension .module.css
           {
             test: cssModuleRegex,
+            exclude: cssRegex,
             use: getStyleLoaders({
               importLoaders: 1,
               modules: true,
@@ -276,16 +276,16 @@ module.exports = {
           // Chains the sass-loader with the css-loader and the style-loader
           // to immediately apply all styles to the DOM.
           // By default we support SASS Modules with the
-          // extensions .module.scss or .module.sass
+          // extensions .scss or .sass
           {
             test: sassRegex,
-            exclude: sassModuleRegex,
             use: getStyleLoaders({ importLoaders: 2 }, 'sass-loader'),
           },
           // Adds support for CSS Modules, but using SASS
-          // using the extension .module.scss or .module.sass
+          // using the extension .global.scss or .global.sass
           {
             test: sassModuleRegex,
+            exclude: sassRegex,
             use: getStyleLoaders(
               {
                 importLoaders: 2,
