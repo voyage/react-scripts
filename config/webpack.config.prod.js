@@ -347,6 +347,17 @@ module.exports = {
             // See https://github.com/webpack/webpack/issues/6571
             sideEffects: true,
           },
+          // Support `import 'react-select/main.css?raw;`
+          // https://github.com/css-modules/css-modules/pull/65#issuecomment-354712147
+          {
+            test: cssModuleRegex,
+            resourceQuery: /^\?raw$/,
+            loader: getStyleLoaders({
+              importLoaders: 1,
+              sourceMap: shouldUseSourceMap,
+            }),
+            sideEffects: true,
+          },
           // Adds support for CSS Modules (https://github.com/css-modules/css-modules)
           // using the extension .module.css
           {
